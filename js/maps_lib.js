@@ -26,13 +26,13 @@ var MapsLib = {
 
   //MODIFY the encrypted Table IDs of your Fusion Tables (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1n_hL8n1aC1_BysjBkBYv_EIt1HQgB53io0uG9-mo", //Point data layer
+  fusionTableId:      "1FaVPhdeMIXcLTW33b1pA5yfdXFW7eZd6RpqDf0hl", //Point data layer
 
   polygon1TableID:    "1o-Xs4sG6qgc5u_MLwzVwjOX14WUul4oA1QlZTpTx", //HPS zones
 
   //*MODIFY Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
-  googleApiKey:       "1FaVPhdeMIXcLTW33b1pA5yfdXFW7eZd6RpqDf0hl",
+  googleApiKey:       "AIzaSyDIevSvpV-ONb4Pf15VUtwyr_zZa7ccwq4",
 
   //MODIFY name of the location column in your Fusion Table.
   //NOTE: if your location column name has spaces in it, surround it with single quotes
