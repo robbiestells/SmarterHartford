@@ -26,7 +26,7 @@ var MapsLib = {
 
   //MODIFY the encrypted Table IDs of your Fusion Tables (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1FaVPhdeMIXcLTW33b1pA5yfdXFW7eZd6RpqDf0hl", //Point data layer
+  fusionTableId:      "e9bd6d81ab9df9d924ab4a7cf819fb6145e0f8c6", //Point data layer
 
   polygon1TableID:    "1o-Xs4sG6qgc5u_MLwzVwjOX14WUul4oA1QlZTpTx", //HPS zones
 
