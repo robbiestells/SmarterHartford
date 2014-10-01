@@ -345,7 +345,7 @@ var MapsLib = {
           <tr>\
             <th>School (managed by)</th>\
             <th>Grades&nbsp;&nbsp;&nbsp;&nbsp;</th>\
-            <th>Address</th>\
+            <th>Address (HPS Zone)</th>\
             <th>Distance&nbsp;&nbsp;&nbsp;</th>\
             <th>To Apply</th>\
           </tr>\
