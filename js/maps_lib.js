@@ -319,7 +319,7 @@ var MapsLib = {
   getList: function(whereClause) {
     // select specific columns from the fusion table to display in the list
     // NOTE: we'll be referencing these by their index (0 = School, 1 = GradeLevels, etc), so order matters!
-    var selectColumns = "School, Manager, TypeNum, Address, City, Lat, Lng, Grades, SchoolURL, ApplyTo, ApplyURL, Transportation, TransportationURL, Rating, RatingURL, ReportURL, Zone";
+    var selectColumns = "School, Manager, TypeNum, Address, City, Lat, Lng, Grades, SchoolURL, ApplyTo, ApplyURL, Transportation, TransportationURL, Rating, RatingURL, ReportURL, Zone, Report";
     MapsLib.query(selectColumns, whereClause,"", "", 500, "MapsLib.displayList");
   },
 
@@ -345,7 +345,7 @@ var MapsLib = {
           <tr>\
             <th>School (managed by)</th>\
             <th>Grades&nbsp;&nbsp;&nbsp;&nbsp;</th>\
-            <th>Address</th>\
+            <th>Address (HPS Zone)</th>\
             <th>Distance&nbsp;&nbsp;&nbsp;</th>\
             <th>To Apply</th>\
           </tr>\
@@ -353,7 +353,7 @@ var MapsLib = {
         <tbody>";
 
       for (var row in rows) {
-        var schoolCombo = "<a href='" + rows[row][8] + "'>" + rows[row][0] + "</a>" + " (" + rows[row][1] + ")" + "<br />" + "<a href='" + rows[row][15] + "'>" + "<i> Get AH! Report </i>" + "</a>";
+        var schoolCombo = "<a href='" + rows[row][8] + "'>" + rows[row][0] + "</a>" + " (" + rows[row][1] + ")" + "<br />" + "<a href='" + rows[row][15] + "'>" + [rows[row][17] + "</a>";
         var addressCombo = rows[row][3] + ", " + rows[row][4] + "<br />" + "(" + rows[row][16] + ")";
         var applyCombo = "<a href='" + rows[row][10] + "'>" + rows[row][9] + "</a>" + "<br />" + "<a href='" + rows[row][12] + "'>" + rows[row][11] + "</a>";
 
@@ -377,6 +377,7 @@ var MapsLib = {
       // rows[row][14] = RatingURL
       // rows[row][15] = ReportURL
       // rows[row][16] = Zone
+      // rows[row][17] = Report
 
 
 // IN FUTURE , add: <td>" + ratingCombo + "</td>\
