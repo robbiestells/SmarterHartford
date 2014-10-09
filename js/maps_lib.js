@@ -353,7 +353,7 @@ var MapsLib = {
         <tbody>";
 
       for (var row in rows) {
-        var schoolCombo = "<a href='" + rows[row][8] + "'>" + rows[row][0] + "</a>" + " (" + rows[row][1] + ")" + "<br />" + "<a href='" + rows[row][15] + "'>" + <i> rows[row][17]</i> + "</a>";
+        var schoolCombo = "<a href='" + rows[row][8] + "'>" + rows[row][0] + "</a>" + " (" + rows[row][1] + ")" + "<br />" + "<a href='" + rows[row][15] + "'>" + "<i>" [rows[row][17] "</i>" + "</a>";
         var addressCombo = rows[row][3] + ", " + rows[row][4] + "<br />" + "(" + rows[row][16] + ")";
         var applyCombo = "<a href='" + rows[row][10] + "'>" + rows[row][9] + "</a>" + "<br />" + "<a href='" + rows[row][12] + "'>" + rows[row][11] + "</a>";
 
