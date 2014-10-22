@@ -175,6 +175,9 @@ var MapsLib = {
 
           // MapsLib.drawSearchRadiusCircle(MapsLib.currentPinpoint);
           MapsLib.submitSearch(whereClause, map, MapsLib.currentPinpoint);
+          
+          // look up the Hartford zone number when we have an address
+          MapsLib.getZoneNumber();
         }
         else {
           alert("We could not find your address: " + status);
@@ -426,7 +429,36 @@ var MapsLib = {
     }
    },
 
+    getZoneNumber: function() {
+      var queryStr = [];
+      var callback = "MapsLib.displayZoneNumber";
+      queryStr.push("SELECT 'zone'");
+      queryStr.push(" FROM " + MapsLib.polygon1TableID);
 
+      if (MapsLib.currentPinpoint) {
+         queryStr.push(" WHERE ST_INTERSECTS(geometry, CIRCLE(LATLNG" + MapsLib.currentPinpoint.toString() + ", 0.1))");
+
+        var sql = encodeURIComponent(queryStr.join(" "));
+        // console.log(sql)
+         $.ajax({url: "https://www.googleapis.com/fusiontables/v1/query?sql="+sql+"&callback="+callback+"&key="+MapsLib.googleApiKey, dataType: "jsonp"});
+      }
+    },
+  
+    displayZoneNumber: function(json) {
+      MapsLib.handleError(json);
+      var zone = "";
+      if (json["rows"] != null) {
+        zone = json["rows"][0];
+        $( "#zone_number" ).fadeOut(function() {
+          $( "#zone_number" ).html("You live in <strong>Hartford School Zone " + zone + "</strong>.");
+        });
+       $( "#zone_number" ).fadeIn();
+      }
+      else {
+         $( "#zone_number" ).fadeOut();
+      }
+    },
+    
   addCommas: function(nStr) {
     nStr += '';
     x = nStr.split('.');
