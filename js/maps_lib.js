@@ -140,13 +140,15 @@ var MapsLib = {
     // if ( $("#cbType5").is(':checked')) searchType += "5,";
     whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
 
-    /*-- TEXTUAL OPTION to display legend and filter by non-numerical data in your table
-    var type_column = "'Program Type'";  // -- note use of single & double quotes for two-word column header
+    // TEXTUAL OPTION to display legend and filter by non-numerical data in your table
+    var type_column = "Zone";  // -- note use of single & double quotes for two-word column header
     var tempWhereClause = [];
-    if ( $("#cbType1").is(':checked')) tempWhereClause.push("Interdistrict");
-    if ( $("#cbType2").is(':checked')) tempWhereClause.push("District");
-    if ( $("#cbType3").is(':checked')) tempWhereClause.push("MorePreK");
-    whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')"; */
+    if ( $("#cbZone1").is(':checked')) tempWhereClause.push("Zone1");
+    if ( $("#cbZone2").is(':checked')) tempWhereClause.push("Zone2");
+    if ( $("#cbZone3").is(':checked')) tempWhereClause.push("Zone3");
+    if ( $("#cbZone4").is(':checked')) tempWhereClause.push("Zone4");
+    if ( $("#cbZone5").is(':checked')) tempWhereClause.push("N/A"); // -- Hidden checkbox in index.html
+    whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')"; 
 
     //-------end of custom filters--------
 
