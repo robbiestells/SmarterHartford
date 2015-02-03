@@ -143,10 +143,10 @@ var MapsLib = {
     // TEXTUAL OPTION to display legend and filter by non-numerical data in your table
     var type_column = "Zone";  // -- note use of single & double quotes for two-word column header
     var tempWhereClause = [];
-    if ( $("#cbZone1").is(':checked')) tempWhereClause.push("Zone1");
-    if ( $("#cbZone2").is(':checked')) tempWhereClause.push("Zone2");
-    if ( $("#cbZone3").is(':checked')) tempWhereClause.push("Zone3");
-    if ( $("#cbZone4").is(':checked')) tempWhereClause.push("Zone4");
+    if ( $("#cbZone1").is(':checked')) tempWhereClause.push("Zone 1");
+    if ( $("#cbZone2").is(':checked')) tempWhereClause.push("Zone 2");
+    if ( $("#cbZone3").is(':checked')) tempWhereClause.push("Zone 3");
+    if ( $("#cbZone4").is(':checked')) tempWhereClause.push("Zone 4");
     if ( $("#cbZone5").is(':checked')) tempWhereClause.push("N/A"); // -- Hidden checkbox in index.html
     whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')"; 
 
